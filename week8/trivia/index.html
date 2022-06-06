@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+
+<html lang="en">
+    <head>
+        <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500&display=swap" rel="stylesheet">
+        <link href="styles.css" rel="stylesheet">
+        <title>Trivia!</title>
+    </head>
+    <body>
+        <div class="header">
+            <h1>Trivia!</h1>
+        </div>
+
+        <div class="container">
+            <div class="section">
+                <h2>Part 1: Multiple Choice </h2>
+                <hr>
+                <!-- TODO: Add multiple choice question here -->
+                <h3> What is the most popular Operating System?</h3>
+                <ul>
+                  <li>
+                    <input class = "choiceB" type="button" id="WindowsButton" value="Windows">
+                  </li>
+                  <li>
+                    <input class = "choiceB" type="button" id="MacOSButton" value="MacOS">
+                  </li>
+                  <li>
+                    <input class = "choiceB" type="button" id="LinuxButton" value="Linux">
+                  </li>
+                  <li>
+                    <input class = "choiceB" type="button" id="UnixButton" value="Unix">
+                  </li>
+                </ul>
+            </div>
+
+            <div class="section">
+                <h2>Part 2: Free Response</h2>
+                <hr>
+                <!-- TODO: Add free response question here -->
+                <form action="">
+                  <h3>What color is a banna?</h3>
+                  <input type="text" id = "anwser" name="">
+                  <input type="submit" value = "Submit">
+                </form>
+            </div>
+        </div>
+        <script>
+            // TODO: Add code to check answers to questions
+            function bannaColor()
+            {
+              let answer = document.querySelector('#anwser').value;
+              if (answer == 'yellow')
+              {
+                alert('Your Correct! banna is Indeed ' + answer);
+              }else
+              {
+                alert('Your Correct! banna is not ' + answer);
+              }
+            }
+
+            function checkAnwser(event)
+            {
+              if (event.target.id == 'WindowsButton')
+              {
+                alert('Your Correct!');
+              }else
+              {
+                alert("That's Incorrect!");
+              }
+            }
+
+            document.querySelector('form').addEventListener('submit', bannaColor);
+            document.querySelector('#WindowsButton').addEventListener('click', checkAnwser);
+            document.querySelector('#MacOSButton').addEventListener('click', checkAnwser);
+            document.querySelector('#LinuxButton').addEventListener('click', checkAnwser);
+            document.querySelector('#UnixButton').addEventListener('click', checkAnwser);
+        </script>
+    </body>
+</html>
