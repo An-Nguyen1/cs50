@@ -1,0 +1,40 @@
+{% extends "layout.html" %}
+{% block title %}
+Homepage
+{% endblock %}
+
+{% block main %}
+
+<table class="table table-hover">
+  <thead>
+    <tr>
+      <th class="text-start">Symbol</th>
+      <th class="text-start">Company</th>
+      <th class="text-end">Price</th>
+      <th class="text-end">Shares</th>
+      <th class="text-end">Total</th>
+    </tr>
+  </thead>
+  <tbody>
+    {% for stock in stocks %}
+    <tr>
+      <td class="text-start">{{stock["stock_symbol"]}}</td>
+      <td class="text-start">{{stock["name"]}}</td>
+      <td class="text-end">{{stock["per_price"]}}</td>
+      <td class="text-end">{{stock["amount"]}}</td>
+      <td class="text-end">{{stock["per_price"] * stock["amount"]}}</td>
+    </tr>
+    {% endfor %}
+  </tbody>
+  <tfoot>
+    <tr>
+      <td class="text-end border-0 fw-bold" colspan="4">Cash</td>
+      <td class="text-end">{{cash}}</td>
+    </tr>
+    <tr>
+      <td class="text-end border-0 fw-bold" colspan="4">Total</td>
+      <td class="text-end">{{total}}</td>
+    </tr>
+  </tfoot>
+</table>
+{% endblock %}

@@ -1,0 +1,21 @@
+{% extends "layout.html" %}
+
+{% block title %}
+Buy
+{% endblock %}
+
+{% block main %}
+<form action="/buy" method="post">
+  <div class="mb-3 col-md-4 mx-auto form-floating">
+    <input class="form-control" type="text" name="stock_symbol" placeholder="Symbol" id="SymbolSelect">
+    <label for="SymbolSelect">Symbol</label>
+  </div>
+  <div class="mb-3 col-md-4 mx-auto form-floating">
+    <input class="form-control" type="number" min="1" name="amount" placeholder="Shares" id="sharesSelect">
+    <label for="sharesSelect">Shares</label>
+  </div>
+  <div>
+    <input class="btn btn-primary btn-lg" type="submit" value="Buy">
+  </div>
+</form>
+{% endblock %}
